@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  gateway:
+    build: ./mensagem/gateway
+    ports:
+      - "5000:5000"
+    depends_on:
+      - eventos
+      - logs
+    volumes:
+      - ./logs:/logs
+  eventos:
+    build: ./mensagem/eventos
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./logs:/logs
+  logs:
+    build: ./mensagem/logs
+    ports:
+      - "5002:5002"
+    volumes:
+      - ./logs:/logs

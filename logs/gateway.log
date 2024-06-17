@@ -1,0 +1,2369 @@
+2024-06-19 10:56:22,484 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.4:5000
+2024-06-19 10:56:22,487 [33mPress CTRL+C to quit[0m
+2024-06-19 10:59:13,201 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8123cd30>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8123cd30>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8123cd30>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 10:59:13,208 172.18.0.1 - - [19/Jun/2024 10:59:13] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 10:59:22,001 Exception on /eventos [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8091b640>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8091b640>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 15, in eventos
+    response = requests.get('http://eventos:5001/eventos')
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8091b640>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 10:59:22,002 172.18.0.1 - - [19/Jun/2024 10:59:22] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 10:59:32,104 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8123c910>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8123c910>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8123c910>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 10:59:32,107 172.18.0.1 - - [19/Jun/2024 10:59:32] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 10:59:34,367 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa80926a90>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80926a90>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80926a90>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 10:59:34,369 172.18.0.1 - - [19/Jun/2024 10:59:34] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 10:59:47,283 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa809264f0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa809264f0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa809264f0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 10:59:47,284 172.18.0.1 - - [19/Jun/2024 10:59:47] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:00:38,476 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8123c580>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8123c580>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8123c580>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:00:38,478 172.18.0.1 - - [19/Jun/2024 11:00:38] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:00:39,178 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8092cdc0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8092cdc0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8092cdc0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:00:39,180 172.18.0.1 - - [19/Jun/2024 11:00:39] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:00:39,417 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8091bd90>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8091bd90>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8091bd90>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:00:39,420 172.18.0.1 - - [19/Jun/2024 11:00:39] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:00:39,596 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa80939eb0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80939eb0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80939eb0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:00:39,599 172.18.0.1 - - [19/Jun/2024 11:00:39] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:00:39,752 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa80926100>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80926100>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80926100>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:00:39,755 172.18.0.1 - - [19/Jun/2024 11:00:39] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:00:39,898 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8092c100>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8092c100>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8092c100>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:00:39,901 172.18.0.1 - - [19/Jun/2024 11:00:39] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:00:40,029 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8093f2e0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8093f2e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8093f2e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:00:40,031 172.18.0.1 - - [19/Jun/2024 11:00:40] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:00:40,207 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8091b880>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8091b880>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8091b880>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:00:40,210 172.18.0.1 - - [19/Jun/2024 11:00:40] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:00:40,677 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa80939850>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80939850>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80939850>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:00:40,679 172.18.0.1 - - [19/Jun/2024 11:00:40] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:00:40,985 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa80926190>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80926190>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80926190>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:00:40,987 172.18.0.1 - - [19/Jun/2024 11:00:40] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:00:41,318 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa80926dc0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80926dc0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80926dc0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:00:41,320 172.18.0.1 - - [19/Jun/2024 11:00:41] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:07:57,740 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8092c430>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8092c430>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8092c430>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:07:57,743 172.18.0.1 - - [19/Jun/2024 11:07:57] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:07:58,291 Exception on /eventos [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8091ba60>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8091ba60>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 13, in eventos
+    response = requests.post('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8091ba60>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:07:58,293 172.18.0.1 - - [19/Jun/2024 11:07:58] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:08:18,802 Exception on /eventos [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8092c3a0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8092c3a0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 15, in eventos
+    response = requests.get('http://eventos:5001/eventos')
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8092c3a0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:08:18,804 172.18.0.1 - - [19/Jun/2024 11:08:18] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:08:24,880 Exception on /eventos [PUT]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa80926130>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80926130>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 17, in eventos
+    response = requests.put('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 130, in put
+    return request("put", url, data=data, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80926130>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:08:24,883 172.18.0.1 - - [19/Jun/2024 11:08:24] "[35m[1mPUT /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:08:25,406 Exception on /eventos [PUT]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8091bbb0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8091bbb0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 17, in eventos
+    response = requests.put('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 130, in put
+    return request("put", url, data=data, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8091bbb0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:08:25,409 172.18.0.1 - - [19/Jun/2024 11:08:25] "[35m[1mPUT /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:08:25,614 Exception on /eventos [PUT]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa80939940>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80939940>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 17, in eventos
+    response = requests.put('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 130, in put
+    return request("put", url, data=data, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80939940>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:08:25,617 172.18.0.1 - - [19/Jun/2024 11:08:25] "[35m[1mPUT /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:08:25,754 Exception on /eventos [PUT]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8091b580>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8091b580>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 17, in eventos
+    response = requests.put('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 130, in put
+    return request("put", url, data=data, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8091b580>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:08:25,757 172.18.0.1 - - [19/Jun/2024 11:08:25] "[35m[1mPUT /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:08:25,956 Exception on /eventos [PUT]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8123c5e0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8123c5e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 17, in eventos
+    response = requests.put('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 130, in put
+    return request("put", url, data=data, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8123c5e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:08:25,959 172.18.0.1 - - [19/Jun/2024 11:08:25] "[35m[1mPUT /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:08:26,062 Exception on /eventos [PUT]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8092c580>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8092c580>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 17, in eventos
+    response = requests.put('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 130, in put
+    return request("put", url, data=data, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8092c580>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:08:26,063 172.18.0.1 - - [19/Jun/2024 11:08:26] "[35m[1mPUT /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:08:26,220 Exception on /eventos [PUT]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa80926ee0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80926ee0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 17, in eventos
+    response = requests.put('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 130, in put
+    return request("put", url, data=data, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa80926ee0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:08:26,222 172.18.0.1 - - [19/Jun/2024 11:08:26] "[35m[1mPUT /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:08:26,475 Exception on /eventos [PUT]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa809d3160>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa809d3160>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 17, in eventos
+    response = requests.put('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 130, in put
+    return request("put", url, data=data, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa809d3160>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:08:26,479 172.18.0.1 - - [19/Jun/2024 11:08:26] "[35m[1mPUT /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:08:26,644 Exception on /eventos [PUT]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8092c430>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8092c430>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 17, in eventos
+    response = requests.put('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 130, in put
+    return request("put", url, data=data, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8092c430>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:08:26,646 172.18.0.1 - - [19/Jun/2024 11:08:26] "[35m[1mPUT /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:08:26,789 Exception on /eventos [PUT]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8091b610>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8091b610>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 17, in eventos
+    response = requests.put('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 130, in put
+    return request("put", url, data=data, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8091b610>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:08:26,791 172.18.0.1 - - [19/Jun/2024 11:08:26] "[35m[1mPUT /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:08:26,925 Exception on /eventos [PUT]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8091be50>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8091be50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 17, in eventos
+    response = requests.put('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 130, in put
+    return request("put", url, data=data, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8091be50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:08:26,928 172.18.0.1 - - [19/Jun/2024 11:08:26] "[35m[1mPUT /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:08:27,080 Exception on /eventos [PUT]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa8092cf70>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8092cf70>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 17, in eventos
+    response = requests.put('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 130, in put
+    return request("put", url, data=data, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa8092cf70>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:08:27,083 172.18.0.1 - - [19/Jun/2024 11:08:27] "[35m[1mPUT /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:08:27,194 Exception on /eventos [PUT]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 398, in request
+    self.endheaders()
+  File "/usr/local/lib/python3.9/http/client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.9/http/client.py", line 1040, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.9/http/client.py", line 980, in send
+    self.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 236, in connect
+    self.sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7ffa809265b0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa809265b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/gateway.py", line 17, in eventos
+    response = requests.put('http://eventos:5001/eventos', json=request.json)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 130, in put
+    return request("put", url, data=data, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7ffa809265b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:08:27,196 172.18.0.1 - - [19/Jun/2024 11:08:27] "[35m[1mPUT /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:08:46,813 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.4:5000
+2024-06-19 11:08:46,815 [33mPress CTRL+C to quit[0m
+2024-06-19 11:12:43,731 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.0.4:5000
+2024-06-19 11:12:43,732 [33mPress CTRL+C to quit[0m
+2024-06-19 11:13:52,429 Error in /eventos endpoint: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fadd61f8f40>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:13:52,430 172.20.0.1 - - [19/Jun/2024 11:13:52] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:14:07,462 Error in /eventos endpoint: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fadd59b4400>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:14:07,464 172.20.0.1 - - [19/Jun/2024 11:14:07] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:14:11,419 Error in /eventos endpoint: HTTPConnectionPool(host='eventos', port=5001): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fadd598fc40>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:14:11,420 172.20.0.1 - - [19/Jun/2024 11:14:11] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:26:14,047 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.0.4:5000
+2024-06-19 11:26:14,049 [33mPress CTRL+C to quit[0m
+2024-06-19 11:27:37,979 POST /eventos 500
+2024-06-19 11:27:37,985 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8535e76a30>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:27:37,987 172.21.0.1 - - [19/Jun/2024 11:27:37] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:27:48,281 POST /eventos 500
+2024-06-19 11:27:48,286 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f85366df2e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:27:48,287 172.21.0.1 - - [19/Jun/2024 11:27:48] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:27:48,859 POST /eventos 500
+2024-06-19 11:27:48,861 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8535e30460>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:27:48,863 172.21.0.1 - - [19/Jun/2024 11:27:48] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:27:49,173 POST /eventos 500
+2024-06-19 11:27:49,176 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f85366df580>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:27:49,177 172.21.0.1 - - [19/Jun/2024 11:27:49] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:27:49,345 POST /eventos 500
+2024-06-19 11:27:49,351 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8535e76940>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:27:49,353 172.21.0.1 - - [19/Jun/2024 11:27:49] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:27:49,465 POST /eventos 500
+2024-06-19 11:27:49,471 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f85366b8be0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:27:49,473 172.21.0.1 - - [19/Jun/2024 11:27:49] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:27:49,596 POST /eventos 500
+2024-06-19 11:27:49,601 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8535e76a30>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:27:49,602 172.21.0.1 - - [19/Jun/2024 11:27:49] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:27:49,678 POST /eventos 500
+2024-06-19 11:27:49,683 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8535e35df0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:27:49,684 172.21.0.1 - - [19/Jun/2024 11:27:49] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:29:16,889 POST /eventos 500
+2024-06-19 11:29:16,892 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f85366dffa0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:29:16,893 172.21.0.1 - - [19/Jun/2024 11:29:16] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:29:24,221 GET /eventos 200
+2024-06-19 11:29:24,226 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8535e350d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:29:24,228 172.21.0.1 - - [19/Jun/2024 11:29:24] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:33:51,640 POST /eventos 500
+2024-06-19 11:33:51,643 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f85366df190>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:33:51,644 172.21.0.1 - - [19/Jun/2024 11:33:51] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:08,063 POST /eventos 500
+2024-06-19 11:37:08,067 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8535e35cd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:08,069 172.21.0.1 - - [19/Jun/2024 11:37:08] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:08,621 POST /eventos 500
+2024-06-19 11:37:08,628 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8535e3bbb0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:08,630 172.21.0.1 - - [19/Jun/2024 11:37:08] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:08,990 POST /eventos 500
+2024-06-19 11:37:08,992 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8535e358b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:08,993 172.21.0.1 - - [19/Jun/2024 11:37:08] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:09,167 POST /eventos 500
+2024-06-19 11:37:09,171 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8535e44e50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:09,172 172.21.0.1 - - [19/Jun/2024 11:37:09] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:09,232 POST /eventos 500
+2024-06-19 11:37:09,235 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8535e35640>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:09,236 172.21.0.1 - - [19/Jun/2024 11:37:09] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:09,517 POST /eventos 500
+2024-06-19 11:37:09,522 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f85366df490>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:09,523 172.21.0.1 - - [19/Jun/2024 11:37:09] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:09,654 POST /eventos 500
+2024-06-19 11:37:09,658 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f85366df5e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:09,660 172.21.0.1 - - [19/Jun/2024 11:37:09] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:09,772 POST /eventos 500
+2024-06-19 11:37:09,776 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8535e356d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:09,778 172.21.0.1 - - [19/Jun/2024 11:37:09] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:09,920 POST /eventos 500
+2024-06-19 11:37:09,923 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8535e49760>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:09,924 172.21.0.1 - - [19/Jun/2024 11:37:09] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:41:44,468 GET /eventos 200
+2024-06-19 11:41:44,470 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f85366dfc10>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:41:44,471 172.21.0.1 - - [19/Jun/2024 11:41:44] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:41:53,043 GET /eventos 200
+2024-06-19 11:41:53,045 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8535e35e20>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:41:53,046 172.21.0.1 - - [19/Jun/2024 11:41:53] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:43:11,311 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.0.4:5000
+2024-06-19 11:43:11,312 [33mPress CTRL+C to quit[0m
+2024-06-19 11:43:18,117 GET /eventos 200
+2024-06-19 11:43:18,120 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f847b32ea00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:43:18,121 172.21.0.1 - - [19/Jun/2024 11:43:18] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:43:18,885 GET /eventos 200
+2024-06-19 11:43:18,889 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f847bb9aac0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:43:18,890 172.21.0.1 - - [19/Jun/2024 11:43:18] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:43:19,208 GET /eventos 200
+2024-06-19 11:43:19,211 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f847b361430>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:43:19,212 172.21.0.1 - - [19/Jun/2024 11:43:19] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:43:28,550 GET /eventos 200
+2024-06-19 11:43:28,554 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f847b32e910>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:43:28,555 172.21.0.1 - - [19/Jun/2024 11:43:28] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:44:29,394 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.0.4:5000
+2024-06-19 11:44:29,396 [33mPress CTRL+C to quit[0m
+2024-06-19 11:44:35,389 GET /eventos 200
+2024-06-19 11:44:35,393 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9d5b15ca00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:44:35,395 172.21.0.1 - - [19/Jun/2024 11:44:35] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:44:36,009 GET /eventos 200
+2024-06-19 11:44:36,021 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9d5b9c8a90>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:44:36,022 172.21.0.1 - - [19/Jun/2024 11:44:36] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:44:36,282 GET /eventos 200
+2024-06-19 11:44:36,287 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9d5b18f430>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:44:36,291 172.21.0.1 - - [19/Jun/2024 11:44:36] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:45:04,078 GET /eventos 200
+2024-06-19 11:45:04,084 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9d5b15c8e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:45:04,086 172.21.0.1 - - [19/Jun/2024 11:45:04] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:45:04,807 GET /eventos 200
+2024-06-19 11:45:04,809 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9d5b9c8070>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:45:04,810 172.21.0.1 - - [19/Jun/2024 11:45:04] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:45:05,039 GET /eventos 200
+2024-06-19 11:45:05,042 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9d5b18b910>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:45:05,043 172.21.0.1 - - [19/Jun/2024 11:45:05] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:45:29,390 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.0.4:5000
+2024-06-19 11:45:29,392 [33mPress CTRL+C to quit[0m
+2024-06-19 11:45:35,778 GET /eventos 200
+2024-06-19 11:45:35,788 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f409b054a00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:45:35,790 172.21.0.1 - - [19/Jun/2024 11:45:35] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:45:36,390 GET /eventos 200
+2024-06-19 11:45:36,399 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f409b8c0c10>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:45:36,400 172.21.0.1 - - [19/Jun/2024 11:45:36] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:45:36,672 GET /eventos 200
+2024-06-19 11:45:36,676 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f409b087430>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:45:36,677 172.21.0.1 - - [19/Jun/2024 11:45:36] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:46:19,391 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.0.4:5000
+2024-06-19 11:46:19,392 [33mPress CTRL+C to quit[0m
+2024-06-19 11:46:20,909 Error in /eventos endpoint: HTTPConnectionPool(host='eventos', port=5000): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fdaaa357e80>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:46:20,910 172.21.0.1 - - [19/Jun/2024 11:46:20] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:46:21,689 Error in /eventos endpoint: HTTPConnectionPool(host='eventos', port=5000): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fdaa9b113a0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:46:21,690 172.21.0.1 - - [19/Jun/2024 11:46:21] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:46:22,011 Error in /eventos endpoint: HTTPConnectionPool(host='eventos', port=5000): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fdaa9b11250>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:46:22,012 172.21.0.1 - - [19/Jun/2024 11:46:22] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:46:22,363 Error in /eventos endpoint: HTTPConnectionPool(host='eventos', port=5000): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fdaaa3573d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:46:22,364 172.21.0.1 - - [19/Jun/2024 11:46:22] "[35m[1mGET /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:47:45,330 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.0.4:5000
+2024-06-19 11:47:45,332 [33mPress CTRL+C to quit[0m
+2024-06-19 11:48:33,230 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.0.4:5000
+2024-06-19 11:48:33,232 [33mPress CTRL+C to quit[0m
+2024-06-19 11:53:30,652 Error in /eventos endpoint: HTTPConnectionPool(host='eventos', port=5000): Max retries exceeded with url: /eventos (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f07a2b2df40>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:53:30,653 172.21.0.1 - - [19/Jun/2024 11:53:30] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:59:37,427 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.22.0.4:5000
+2024-06-19 11:59:37,428 [33mPress CTRL+C to quit[0m
+2024-06-19 12:00:33,684 GET /eventos 200
+2024-06-19 12:00:33,689 172.22.0.1 - - [19/Jun/2024 12:00:33] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 12:00:48,410 POST /eventos 201
+2024-06-19 12:00:48,414 172.22.0.1 - - [19/Jun/2024 12:00:48] "POST /eventos HTTP/1.1" 200 -
+2024-06-19 12:01:35,143 GET /eventos 200
+2024-06-19 12:01:35,148 172.22.0.1 - - [19/Jun/2024 12:01:35] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 12:01:59,251 PUT /eventos 200
+2024-06-19 12:01:59,255 172.22.0.1 - - [19/Jun/2024 12:01:59] "PUT /eventos HTTP/1.1" 200 -
+2024-06-19 12:02:15,244 DELETE /eventos 200
+2024-06-19 12:02:15,248 172.22.0.1 - - [19/Jun/2024 12:02:15] "DELETE /eventos HTTP/1.1" 200 -
+2024-06-19 12:02:17,082 DELETE /eventos 404
+2024-06-19 12:02:17,086 172.22.0.1 - - [19/Jun/2024 12:02:17] "DELETE /eventos HTTP/1.1" 200 -
+2024-06-19 12:02:17,600 DELETE /eventos 404
+2024-06-19 12:02:17,604 172.22.0.1 - - [19/Jun/2024 12:02:17] "DELETE /eventos HTTP/1.1" 200 -
+2024-06-19 12:02:17,928 DELETE /eventos 404
+2024-06-19 12:02:17,934 172.22.0.1 - - [19/Jun/2024 12:02:17] "DELETE /eventos HTTP/1.1" 200 -
+2024-06-19 12:02:19,013 DELETE /eventos 404
+2024-06-19 12:02:19,018 172.22.0.1 - - [19/Jun/2024 12:02:19] "DELETE /eventos HTTP/1.1" 200 -
+2024-06-19 12:36:55,771 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.23.0.4:5000
+2024-06-19 12:36:55,773 [33mPress CTRL+C to quit[0m
+2024-06-19 12:37:05,270 POST /eventos 201
+2024-06-19 12:37:05,278 172.23.0.1 - - [19/Jun/2024 12:37:05] "POST /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:07,631 POST /eventos 201
+2024-06-19 12:37:07,641 172.23.0.1 - - [19/Jun/2024 12:37:07] "POST /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:08,326 POST /eventos 201
+2024-06-19 12:37:08,332 172.23.0.1 - - [19/Jun/2024 12:37:08] "POST /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:19,485 GET /eventos 200
+2024-06-19 12:37:19,490 172.23.0.1 - - [19/Jun/2024 12:37:19] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:30,250 PUT /eventos 200
+2024-06-19 12:37:30,254 172.23.0.1 - - [19/Jun/2024 12:37:30] "PUT /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:31,248 PUT /eventos 200
+2024-06-19 12:37:31,255 172.23.0.1 - - [19/Jun/2024 12:37:31] "PUT /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:32,564 PUT /eventos 200
+2024-06-19 12:37:32,568 172.23.0.1 - - [19/Jun/2024 12:37:32] "PUT /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:32,746 PUT /eventos 200
+2024-06-19 12:37:32,750 172.23.0.1 - - [19/Jun/2024 12:37:32] "PUT /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:32,929 PUT /eventos 200
+2024-06-19 12:37:32,935 172.23.0.1 - - [19/Jun/2024 12:37:32] "PUT /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:40,494 DELETE /eventos 200
+2024-06-19 12:37:40,504 172.23.0.1 - - [19/Jun/2024 12:37:40] "DELETE /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:42,976 DELETE /eventos 200
+2024-06-19 12:37:42,987 172.23.0.1 - - [19/Jun/2024 12:37:42] "DELETE /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:43,598 DELETE /eventos 200
+2024-06-19 12:37:43,602 172.23.0.1 - - [19/Jun/2024 12:37:43] "DELETE /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:44,020 DELETE /eventos 404
+2024-06-19 12:37:44,031 172.23.0.1 - - [19/Jun/2024 12:37:44] "DELETE /eventos HTTP/1.1" 200 -

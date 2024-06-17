@@ -1,0 +1,174 @@
+2024-06-19 10:56:21,888 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2024-06-19 10:56:21,892 [33mPress CTRL+C to quit[0m
+2024-06-19 11:08:46,418 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.3:5000
+2024-06-19 11:08:46,420 [33mPress CTRL+C to quit[0m
+2024-06-19 11:12:43,252 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.0.2:5000
+2024-06-19 11:12:43,254 [33mPress CTRL+C to quit[0m
+2024-06-19 11:26:13,697 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.0.2:5000
+2024-06-19 11:26:13,699 [33mPress CTRL+C to quit[0m
+2024-06-19 11:27:37,964 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:27:37,973 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f97013ae7f0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:27:37,975 172.21.0.4 - - [19/Jun/2024 11:27:37] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:27:48,273 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:27:48,278 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f97013d7d30>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:27:48,279 172.21.0.4 - - [19/Jun/2024 11:27:48] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:27:48,853 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:27:48,856 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f97013ae4f0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:27:48,857 172.21.0.4 - - [19/Jun/2024 11:27:48] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:27:49,167 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:27:49,170 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f97013d7970>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:27:49,171 172.21.0.4 - - [19/Jun/2024 11:27:49] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:27:49,335 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:27:49,340 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f97013e1fd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:27:49,342 172.21.0.4 - - [19/Jun/2024 11:27:49] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:27:49,454 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:27:49,460 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f97013d72e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:27:49,462 172.21.0.4 - - [19/Jun/2024 11:27:49] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:27:49,587 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:27:49,592 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f97013e15b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:27:49,593 172.21.0.4 - - [19/Jun/2024 11:27:49] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:27:49,668 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:27:49,675 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f97013ae4c0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:27:49,677 172.21.0.4 - - [19/Jun/2024 11:27:49] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:29:16,883 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:29:16,887 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f97013ae430>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:29:16,888 172.21.0.4 - - [19/Jun/2024 11:29:16] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:29:24,217 172.21.0.4 - - [19/Jun/2024 11:29:24] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:33:51,633 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:33:51,637 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f97013e11c0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:33:51,638 172.21.0.4 - - [19/Jun/2024 11:33:51] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:08,052 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:37:08,058 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9701375100>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:08,060 172.21.0.4 - - [19/Jun/2024 11:37:08] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:08,612 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:37:08,616 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9701377310>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:08,618 172.21.0.4 - - [19/Jun/2024 11:37:08] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:08,982 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:37:08,988 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f97013e15b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:08,988 172.21.0.4 - - [19/Jun/2024 11:37:08] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:09,162 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:37:09,164 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9701375ca0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:09,165 172.21.0.4 - - [19/Jun/2024 11:37:09] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:09,226 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:37:09,229 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f97013ae340>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:09,231 172.21.0.4 - - [19/Jun/2024 11:37:09] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:09,509 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:37:09,513 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f97013aed30>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:09,515 172.21.0.4 - - [19/Jun/2024 11:37:09] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:09,644 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:37:09,649 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f97013758b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:09,651 172.21.0.4 - - [19/Jun/2024 11:37:09] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:09,762 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:37:09,768 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f9701c04580>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:09,770 172.21.0.4 - - [19/Jun/2024 11:37:09] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:37:09,911 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 11:37:09,917 Error in /eventos endpoint: HTTPConnectionPool(host='logs', port=5002): Max retries exceeded with url: /logs (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f970137a2b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2024-06-19 11:37:09,918 172.21.0.4 - - [19/Jun/2024 11:37:09] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:41:44,466 172.21.0.4 - - [19/Jun/2024 11:41:44] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:41:53,041 172.21.0.4 - - [19/Jun/2024 11:41:53] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:43:10,861 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.0.2:5000
+2024-06-19 11:43:10,863 [33mPress CTRL+C to quit[0m
+2024-06-19 11:43:18,114 172.21.0.4 - - [19/Jun/2024 11:43:18] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:43:18,884 172.21.0.4 - - [19/Jun/2024 11:43:18] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:43:19,206 172.21.0.4 - - [19/Jun/2024 11:43:19] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:43:28,548 172.21.0.4 - - [19/Jun/2024 11:43:28] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:44:29,034 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.0.2:5000
+2024-06-19 11:44:29,036 [33mPress CTRL+C to quit[0m
+2024-06-19 11:44:35,383 172.21.0.4 - - [19/Jun/2024 11:44:35] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:44:36,004 172.21.0.4 - - [19/Jun/2024 11:44:36] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:44:36,278 172.21.0.4 - - [19/Jun/2024 11:44:36] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:45:04,073 172.21.0.4 - - [19/Jun/2024 11:45:04] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:45:04,804 172.21.0.4 - - [19/Jun/2024 11:45:04] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:45:05,038 172.21.0.4 - - [19/Jun/2024 11:45:05] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:45:28,916 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.21.0.2:5000
+2024-06-19 11:45:28,917 [33mPress CTRL+C to quit[0m
+2024-06-19 11:45:35,772 172.21.0.4 - - [19/Jun/2024 11:45:35] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:45:36,387 172.21.0.4 - - [19/Jun/2024 11:45:36] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:45:36,670 172.21.0.4 - - [19/Jun/2024 11:45:36] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:46:18,824 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5012
+ * Running on http://172.21.0.3:5012
+2024-06-19 11:46:18,825 [33mPress CTRL+C to quit[0m
+2024-06-19 11:47:44,939 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.21.0.3:5001
+2024-06-19 11:47:44,941 [33mPress CTRL+C to quit[0m
+2024-06-19 11:48:02,960 172.21.0.1 - - [19/Jun/2024 11:48:02] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:48:32,745 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.21.0.2:5001
+2024-06-19 11:48:32,747 [33mPress CTRL+C to quit[0m
+2024-06-19 11:49:31,705 172.21.0.1 - - [19/Jun/2024 11:49:31] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:49:32,445 172.21.0.1 - - [19/Jun/2024 11:49:32] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 11:50:15,693 Error in /eventos endpoint: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-06-19 11:50:15,694 172.21.0.1 - - [19/Jun/2024 11:50:15] "[35m[1mPOST /eventos HTTP/1.1[0m" 500 -
+2024-06-19 11:59:36,878 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.22.0.2:5001
+2024-06-19 11:59:36,879 [33mPress CTRL+C to quit[0m
+2024-06-19 12:00:33,683 172.22.0.4 - - [19/Jun/2024 12:00:33] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 12:00:48,402 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 12:00:48,409 172.22.0.4 - - [19/Jun/2024 12:00:48] "[35m[1mPOST /eventos HTTP/1.1[0m" 201 -
+2024-06-19 12:01:35,141 172.22.0.4 - - [19/Jun/2024 12:01:35] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 12:01:59,245 PUT /eventos {'id': 1, 'nome': 'Evento Atualizado', 'data': '2024-06-19'}
+2024-06-19 12:01:59,250 172.22.0.4 - - [19/Jun/2024 12:01:59] "PUT /eventos HTTP/1.1" 200 -
+2024-06-19 12:02:15,239 DELETE /eventos 1
+2024-06-19 12:02:15,243 172.22.0.4 - - [19/Jun/2024 12:02:15] "DELETE /eventos HTTP/1.1" 200 -
+2024-06-19 12:02:17,080 172.22.0.4 - - [19/Jun/2024 12:02:17] "[33mDELETE /eventos HTTP/1.1[0m" 404 -
+2024-06-19 12:02:17,598 172.22.0.4 - - [19/Jun/2024 12:02:17] "[33mDELETE /eventos HTTP/1.1[0m" 404 -
+2024-06-19 12:02:17,927 172.22.0.4 - - [19/Jun/2024 12:02:17] "[33mDELETE /eventos HTTP/1.1[0m" 404 -
+2024-06-19 12:02:19,012 172.22.0.4 - - [19/Jun/2024 12:02:19] "[33mDELETE /eventos HTTP/1.1[0m" 404 -
+2024-06-19 12:36:55,240 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.23.0.2:5001
+2024-06-19 12:36:55,241 [33mPress CTRL+C to quit[0m
+2024-06-19 12:37:05,254 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 12:37:05,268 172.23.0.4 - - [19/Jun/2024 12:37:05] "[35m[1mPOST /eventos HTTP/1.1[0m" 201 -
+2024-06-19 12:37:07,625 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 12:37:07,629 172.23.0.4 - - [19/Jun/2024 12:37:07] "[35m[1mPOST /eventos HTTP/1.1[0m" 201 -
+2024-06-19 12:37:08,314 POST /eventos {'id': 1, 'nome': 'Evento de Teste', 'data': '2024-06-18'}
+2024-06-19 12:37:08,321 172.23.0.4 - - [19/Jun/2024 12:37:08] "[35m[1mPOST /eventos HTTP/1.1[0m" 201 -
+2024-06-19 12:37:19,481 172.23.0.4 - - [19/Jun/2024 12:37:19] "GET /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:30,237 PUT /eventos {'id': 1, 'nome': 'Evento Atualizado', 'data': '2024-06-19'}
+2024-06-19 12:37:30,246 172.23.0.4 - - [19/Jun/2024 12:37:30] "PUT /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:31,241 PUT /eventos {'id': 1, 'nome': 'Evento Atualizado', 'data': '2024-06-19'}
+2024-06-19 12:37:31,247 172.23.0.4 - - [19/Jun/2024 12:37:31] "PUT /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:32,553 PUT /eventos {'id': 1, 'nome': 'Evento Atualizado', 'data': '2024-06-19'}
+2024-06-19 12:37:32,563 172.23.0.4 - - [19/Jun/2024 12:37:32] "PUT /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:32,739 PUT /eventos {'id': 1, 'nome': 'Evento Atualizado', 'data': '2024-06-19'}
+2024-06-19 12:37:32,745 172.23.0.4 - - [19/Jun/2024 12:37:32] "PUT /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:32,916 PUT /eventos {'id': 1, 'nome': 'Evento Atualizado', 'data': '2024-06-19'}
+2024-06-19 12:37:32,927 172.23.0.4 - - [19/Jun/2024 12:37:32] "PUT /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:40,488 DELETE /eventos 1
+2024-06-19 12:37:40,492 172.23.0.4 - - [19/Jun/2024 12:37:40] "DELETE /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:42,971 DELETE /eventos 1
+2024-06-19 12:37:42,975 172.23.0.4 - - [19/Jun/2024 12:37:42] "DELETE /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:43,588 DELETE /eventos 1
+2024-06-19 12:37:43,597 172.23.0.4 - - [19/Jun/2024 12:37:43] "DELETE /eventos HTTP/1.1" 200 -
+2024-06-19 12:37:44,018 172.23.0.4 - - [19/Jun/2024 12:37:44] "[33mDELETE /eventos HTTP/1.1[0m" 404 -
